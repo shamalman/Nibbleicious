@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8c7d3" />
+  <meta name="description" content="Nibbleicious is coming soon. Be first to hear when we're fresh out of the oven!" />
+  <title>Nibbleicious — Coming soon</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <span class="nav-brand">NIBBLEICIOUS</span>
+      <span class="nav-tagline">BAKED WITH LOVE ♡</span>
+    </header>
+    <main class="main-content">
+      <section class="hero" aria-labelledby="headline">
+        <div class="wordmark">nibbleicious</div>
+        <svg class="cookie" viewBox="0 0 240 216" role="img" aria-label="A bitten chocolate chip cookie with crumbs">
+          <path d="M155 18 C132 3 88 7 56 29 C16 56 5 103 18 141 C35 194 82 213 130 204 C177 196 207 159 208 124 C185 125 171 115 166 96 C160 78 168 64 180 55 C168 49 157 39 155 18 Z" fill="#e6ad79" stroke="#592607" stroke-width="12" stroke-linejoin="round"/>
+          <g fill="#6a3010"><ellipse cx="72" cy="62" rx="13" ry="17" transform="rotate(30 72 62)"/><ellipse cx="127" cy="47" rx="12" ry="13"/><ellipse cx="56" cy="118" rx="13" ry="12"/><ellipse cx="110" cy="113" rx="13" ry="14"/><ellipse cx="84" cy="164" rx="16" ry="13" transform="rotate(-18 84 164)"/><ellipse cx="151" cy="166" rx="12" ry="12"/><ellipse cx="163" cy="127" rx="9" ry="10"/><circle cx="203" cy="59" r="11"/><circle cx="224" cy="91" r="8"/><circle cx="220" cy="137" r="6"/><circle cx="200" cy="174" r="4"/></g>
+          <path d="M38 82 C42 67 51 57 62 48" fill="none" stroke="#f6d1af" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+        </svg>
+        <h1 id="headline">Coming soon<span class="period">.</span></h1>
+        <p class="lead">A little bite of happiness is on its way.<br />Be the first to know when we're fresh out of the oven!</p>
+        <form id="signup-form" class="signup" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="Your email address" required maxlength="254" />
+          <button type="submit" id="submit-btn">Keep me posted ♡</button>
+          <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+        </form>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <p class="privacy">Just sweet updates. No spam, promise.</p>
+      </section>
+    </main>
+    <footer>© <span id="year">2026</span> Nibbleicious · Made with love &amp; a few crumbs</footer>
+  </div>
+  <script src="/script.js" defer></script>
+</body>
+</html>

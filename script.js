@@ -20,7 +20,7 @@ form.addEventListener('submit', async (event) => {
     const response = await fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: emailInput.value.trim(), website: form.website.value }),
+      body: JSON.stringify({ email: emailInput.value.trim(), website: document.querySelector('#website').value }),
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(data.error || 'Something went wrong. Please try again.');
@@ -32,6 +32,6 @@ form.addEventListener('submit', async (event) => {
     status.classList.add('error');
   } finally {
     submitButton.disabled = false;
-    submitButton.innerHTML = 'Keep me posted <span aria-hidden="true">↗</span>';
+    submitButton.textContent = 'Keep me posted ♡';
   }
 });
