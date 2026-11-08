@@ -1,0 +1,39 @@
+:root{--pink:#f8c7d3;--pink-light:#ffe3e8;--chocolate:#63270f;--chocolate-dark:#4b1c0d;--cream:#fff9f2}
+*{box-sizing:border-box}
+html{min-height:100%;background:var(--pink)}
+body{margin:0;color:var(--chocolate);font-family:'DM Sans',sans-serif;background:radial-gradient(circle at 50% 35%,#ffe0e7 0%,#f9cbd5 47%,#f4bcca 100%);min-height:100vh;min-height:100svh}
+.shell{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:30px 22px 20px}
+.hero{width:100%;max-width:850px;display:flex;align-items:center;flex-direction:column;text-align:center;position:relative;z-index:1;margin:auto 0}
+.brand{width:min(710px,94vw);height:auto;margin-top:-22px;margin-bottom:-58px;filter:drop-shadow(0 10px 0 rgba(115,49,26,.035))}
+.brand-graphic{width:100%;height:auto;overflow:visible;display:block}
+.arched-word{font-family:'Fredoka',sans-serif;font-weight:700;font-size:100px;letter-spacing:-2.5px;fill:var(--chocolate);stroke:var(--chocolate);stroke-width:1.3px;paint-order:stroke}
+.cookie-group{transform-origin:50% 60%;animation:bob 5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.content{width:100%;max-width:650px;position:relative}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.eyebrow-star{color:#bb6e53;margin:0 6px}
+h1{font-family:'Fredoka',sans-serif;font-size:clamp(54px,8vw,88px);font-weight:700;line-height:1.05;letter-spacing:-.045em;margin:14px 0 12px}
+.period{color:#bc6c51}
+.lead{font-size:clamp(16px,2.25vw,19px);line-height:1.6;font-weight:500;margin:0 auto 27px;max-width:550px}
+.signup{width:min(560px,100%);margin:0 auto}
+.input-wrap{display:flex;align-items:center;gap:6px;padding:6px;background:var(--cream);border:2px solid var(--chocolate);border-radius:999px;box-shadow:5px 6px 0 rgba(99,39,15,.16);transition:box-shadow .2s}
+.input-wrap:focus-within{box-shadow:5px 6px 0 rgba(99,39,15,.29)}
+.input-wrap input{flex:1;min-width:0;height:47px;padding:0 15px 0 20px;border:0;outline:0;background:transparent;color:var(--chocolate);font:500 15px 'DM Sans',sans-serif}
+.input-wrap input::placeholder{color:#9d8275}
+.input-wrap button{background:var(--chocolate);color:#fff9f2;border:0;border-radius:999px;padding:0 24px;min-height:47px;white-space:nowrap;font:700 15px 'DM Sans',sans-serif;cursor:pointer;transition:background .2s,transform .2s}
+.input-wrap button:hover{background:var(--chocolate-dark);transform:scale(1.015)}
+.input-wrap button:focus-visible{outline:3px solid #bb6e53;outline-offset:3px}
+.input-wrap button:disabled{opacity:.7;cursor:wait;transform:none}
+.input-wrap button span{font-size:20px;vertical-align:-1px;margin-left:4px}
+.privacy{font-size:12px;opacity:.76;margin:13px 0 0}
+.status{margin:0;font-size:13px;font-weight:700;line-height:1.5}
+.status:not(:empty){margin-top:15px}
+.status.error{color:#a02c25}
+.status.success{color:#4c6c35}
+.honeypot,.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.twinkle{position:absolute;color:#cb7c8b;font-size:46px;opacity:.6;pointer-events:none}
+.twinkle-left{top:32%;left:10%}.twinkle-right{right:13%;top:55%;font-size:27px}
+footer{font-size:12px;line-height:1.5;text-align:center;opacity:.75;margin:35px auto 0}
+footer span:first-child{color:#b05d59}
+@media(max-width:650px){.shell{padding:22px 18px 18px}.brand{width:min(560px,112vw);margin-top:-14px;margin-bottom:-30px}.arched-word{font-size:100px}.hero{margin:auto 0}.twinkle-left{left:2%;top:26%;font-size:24px}.twinkle-right{right:3%;top:48%}.eyebrow{font-size:10px;letter-spacing:.12em}.lead{font-size:16px}.desktop-break{display:none}.input-wrap{border-radius:28px;flex-direction:column;gap:3px;padding:7px}.input-wrap input{width:100%;text-align:center;min-height:46px}.input-wrap button{width:100%;min-height:48px}footer{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.cookie-group{animation:none}*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}

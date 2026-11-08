@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8c7d3" />
+  <meta name="description" content="Nibbleicious is baking up something sweet. Join the list for news and updates." />
+  <title>Nibbleicious — Coming soon</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <div class="twinkle twinkle-left" aria-hidden="true">✳</div>
+    <div class="twinkle twinkle-right" aria-hidden="true">✳</div>
+    <section class="hero" aria-labelledby="headline">
+      <div class="brand" role="img" aria-label="Nibbleicious, with a bitten chocolate chip cookie">
+        <svg class="brand-graphic" viewBox="0 0 800 575" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <path id="brand-arch" d="M 87 262 Q 400 -78 713 262" />
+            <linearGradient id="cookie-dough" x1="0" y1="0" x2="0.75" y2="1"><stop offset="0" stop-color="#f5c89c"/><stop offset="1" stop-color="#e6a974"/></linearGradient>
+          </defs>
+          <text class="arched-word"><textPath href="#brand-arch" startOffset="50%" text-anchor="middle">nibbleicious</textPath></text>
+          <g class="cookie-group" transform="translate(0 5)">
+            <path d="M 498 227 C 458 204 414 193 369 193 C 229 193 132 296 132 418 C 132 533 231 587 346 563 C 462 538 533 459 538 374 C 498 372 482 348 492 313 C 471 301 462 276 480 256 C 486 245 492 236 498 227 Z" fill="url(#cookie-dough)" stroke="#63270f" stroke-width="23" stroke-linejoin="round" transform="translate(35 -35) scale(.88)"/>
+            <g fill="#63270f">
+              <ellipse cx="311" cy="298" rx="23" ry="29" transform="rotate(35 311 298)"/>
+              <ellipse cx="415" cy="263" rx="24" ry="21"/>
+              <ellipse cx="264" cy="406" rx="27" ry="22" transform="rotate(20 264 406)"/>
+              <circle cx="375" cy="390" r="23"/>
+              <ellipse cx="322" cy="490" rx="27" ry="20" transform="rotate(16 322 490)"/>
+              <circle cx="437" cy="472" r="20"/>
+              <circle cx="487" cy="423" r="15"/>
+              <circle cx="555" cy="288" r="21"/>
+              <circle cx="606" cy="346" r="18"/>
+              <circle cx="625" cy="420" r="22"/>
+              <circle cx="565" cy="452" r="19"/>
+              <circle cx="605" cy="498" r="11"/>
+              <circle cx="563" cy="536" r="9"/>
+            </g>
+          </g>
+          <g fill="#fff6f7" opacity=".92"><ellipse cx="142" cy="176" rx="5" ry="12" transform="rotate(25 142 176)"/><ellipse cx="264" cy="88" rx="5" ry="11" transform="rotate(25 264 88)"/><ellipse cx="412" cy="49" rx="5" ry="11" transform="rotate(25 412 49)"/><ellipse cx="554" cy="85" rx="5" ry="10" transform="rotate(25 554 85)"/><ellipse cx="667" cy="177" rx="5" ry="10" transform="rotate(25 667 177)"/></g>
+        </svg>
+      </div>
+
+      <div class="content">
+        <span class="eyebrow"><span class="eyebrow-star">✦</span> Something sweet is baking <span class="eyebrow-star">✦</span></span>
+        <h1 id="headline">Coming soon<span class="period">.</span></h1>
+        <p class="lead">A little bite of happiness is on its way.<br class="desktop-break"/> Be first to hear when we're fresh out of the oven!</p>
+
+        <form id="signup-form" class="signup" novalidate>
+          <label for="email" class="sr-only">Email address</label>
+          <div class="input-wrap">
+            <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="Your email address" required maxlength="254" />
+            <button type="submit" id="submit-btn">Keep me posted <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+          <p class="status" id="status" aria-live="polite" role="status"></p>
+          <p class="privacy">Just sweet updates. No spam, ever. <span aria-hidden="true">♡</span></p>
+        </form>
+      </div>
+    </section>
+    <footer>Made with <span aria-label="love">♥</span> and a whole lot of cookie dough · <span id="year">2026</span> Nibbleicious</footer>
+  </main>
+  <script src="/script.js" defer></script>
+</body>
+</html>
