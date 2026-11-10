@@ -40,6 +40,29 @@ export default async function handler(req, res) {
     if (await response.json() === false) {
       return res.status(429).json({ error: 'Too many attempts. Please try again in an hour.' });
     }
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const notificationFrom = process.env.SIGNUP_NOTIFICATION_FROM;
+    const notificationRecipients = (process.env.SIGNUP_NOTIFICATION_TO || '').split(',').map((recipient) => recipient.trim()).filter(Boolean);
+    if (resendApiKey && notificationFrom && notificationRecipients.length) {
+      try {
+        const mailResponse = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${resendApiKey}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            from: notificationFrom,
+            to: notificationRecipients,
+            subject: 'Nibbleicious signup',
+            text: `Someone signed up for Nibbleicious updates:\n\n${normalizedEmail}`,
+          }),
+          signal: AbortSignal.timeout(8000),
+        });
+        if (!mailResponse.ok) throw new Error(`Resend returned ${mailResponse.status}.`);
+      } catch (error) {
+        console.error('Signup notification error:', error.message);
+      }
+    } else {
+      console.error('Signup notification is not configured.');
+    }
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Subscription storage error:', err.message);

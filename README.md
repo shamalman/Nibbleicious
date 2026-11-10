@@ -18,6 +18,9 @@ A responsive landing page and Vercel Serverless Function for capturing email sig
    - `SUPABASE_URL` = `https://YOUR_PROJECT.supabase.co`
    - `SUPABASE_SECRET_KEY` = your private `sb_secret_...` key
    - `RATE_LIMIT_SALT` = any long, random, secret string (recommended)
+   - `RESEND_API_KEY` = a Resend API key with sending access for your verified sender domain
+   - `SIGNUP_NOTIFICATION_FROM` = an address on that verified domain, such as `Nibbleicious <updates@nibbleicious.co>`
+   - `SIGNUP_NOTIFICATION_TO` = comma-separated team email addresses (`lilarosaranasinghe@gmail.com,shamal@gmail.com`)
 4. **Redeploy** the project after adding variables.
 5. In **Project → Settings → Domains**, add `nibbleicious.co` and follow Vercel's exact DNS instructions at your domain registrar. Optionally add `www.nibbleicious.co`.
 
@@ -36,7 +39,7 @@ Remove any old `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` values fr
 - The `script.js` form code and site design are unchanged. It POSTs JSON to `/api/subscribe`.
 - An invisible form honeypot, email validation, and a 10-attempts-per-hour per-IP database check provide basic spam resistance. Add CAPTCHA/Turnstile if abuse increases. The rate limit is a fixed clock-hour window; it is not a sliding hour.
 - The counter table retains hashed IP values until you delete old rows; schedule a database cleanup if you keep the site running long-term.
-- No confirmation email or newsletter is sent automatically. For marketing updates, obtain appropriate consent and use an email sending service with unsubscribe support.
+- Successful signup submissions send a plain-text team notification through Resend. The sender domain must be verified in Resend. If sending fails, the signup stays saved and the error appears in Vercel function logs. No confirmation email or newsletter is sent to subscribers automatically. For marketing updates, obtain appropriate consent and use an email sending service with unsubscribe support.
 - `favicon.svg` and the inline SVG cookie logo can be customized separately.
 
 ## Design version
